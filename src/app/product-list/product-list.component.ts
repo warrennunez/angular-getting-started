@@ -10,7 +10,15 @@ import { products } from '../products';
 export class ProductListComponent {
   products = products;
 
+  ngOnInit(): void {
+    console.log(products);
+  }
+
   //console.log(products);
+  viewLog(x){
+    console.log(x);
+    //console.log(window);
+  }
 
   share() {
     window.alert('The product has been shared!');
