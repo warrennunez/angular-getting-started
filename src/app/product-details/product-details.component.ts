@@ -10,9 +10,16 @@ import { products } from '../products';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  constructor() { }
+  product;
+
+  constructor(
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.product = product[+params.get('productId')];
+    })
   }
 
 }
